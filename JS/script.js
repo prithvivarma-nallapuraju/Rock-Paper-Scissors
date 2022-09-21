@@ -23,29 +23,51 @@ function getUserChoice() {
     return choice.toUpperCase()
 }
 
-let userChoice = getUserChoice()
-let computerChoice = getComputerChoice()
-console.log('User choice is: ' + userChoice)
-console.log('Computer choice is: ' + computerChoice)
+function playGround() {
+    let cc=0
+    let uc=0
+    let userChoice
+    let computerChoice
+    while(cc<5 || uc<5) {
+        userChoice = getUserChoice()
+        computerChoice = getComputerChoice()
+        console.log('user choice is: ' + userChoice)
+        console.log('Computer choice is: ' + computerChoice)
+        if (userChoice == 'ROCK' && computerChoice == 'PAPER') {
+            console.log('computer wins')
+            cc++
+        }else if (userChoice == 'ROCK' && computerChoice == 'SCISSORS') {
+            console.log('user wins')
+            uc++
+        }else if(userChoice == 'ROCK' && computerChoice == 'ROCK') {
+            console.log('It\'s a tie')
+        }else if (userChoice == 'PAPER' && computerChoice == 'PAPER') {
+            console.log('It\'s a tie')
+        }else if (userChoice == 'PAPER' && computerChoice == 'SCISSORS') {
+            console.log('computer wins')
+            cc++
+        }else if(userChoice == 'PAPER' && computerChoice == 'ROCK') {
+            console.log('user wins')
+            uc++
+        }else if (userChoice == 'SCISSORS' && computerChoice == 'PAPER') {
+            console.log('user wins')
+            uc++
+        }else if (userChoice == 'SCISSORS' && computerChoice == 'SCISSORS'){ 
+            console.log('It\'s a tie')
+        }else if(userChoice == 'SCISSORS' && computerChoice == 'ROCK') {
+            console.log('computer wins')
+            cc++
+        }
+    }
 
-if (userChoice == 'ROCK' && computerChoice == 'PAPER') {
-    console.log('computer wins')
-}else if (userChoice == 'ROCK' && computerChoice == 'SCISSORS') {
-    console.log('user wins')
-}else if(userChoice == 'ROCK' && computerChoice == 'ROCK') {
-    console.log('It\'s a tie')
-}else if (userChoice == 'PAPER' && computerChoice == 'PAPER') {
-    console.log('It\'s a tie')
-}else if (userChoice == 'PAPER' && computerChoice == 'SCISSORS') {
-    console.log('computer wins')
-}else if(userChoice == 'PAPER' && computerChoice == 'ROCK') {
-    console.log('user wins')
-}else if (userChoice == 'SCISSORS' && computerChoice == 'PAPER') {
-    console.log('user wins')
-}else if (userChoice == 'SCISSORS' && computerChoice == 'SCISSORS') { 
-    console.log('It\'s a tie')
-}else if(userChoice == 'SCISSORS' && computerChoice == 'ROCK') {
-    console.log('computer wins')
+    if(uc == 5){
+        console.log('User finally won and celebrates')
+    }
+    else{
+        console.log('Computer finally won and celebrates')
+    }
 }
+
+playGround()
 
 
