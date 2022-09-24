@@ -5,9 +5,78 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./CSS/style.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/all.min.css">
+  <title>Rock Paper Scissors </title>
 </head>
 <body>
+  <h1 class="logo"> Rock, Paper and Scissors </h1>
+  <div class="main-body">
+    <h3> Choose your weapon </h3>
+    <h5> First to  score 5 points wins the game </h5>
+    <div class="input-container">
+      <button id="rock" onclick="selectedChoice(this.id)">
+        <img src="./Assets/fist.png" alt="fist">
+      </button>
+      <button id="paper" onclick="selectedChoice(this.id)">
+        <img src="./Assets/paper.png" alt="">
+      </button>
+      <button id="scissors" onclick="selectedChoice(this.id)">
+        <img src="./Assets/scissors.png" alt="">
+      </button>
+    </div>
+    <h2>Score</h2>
+    <div class="output-container">
+      <div class="player-choice">
+        <h5> Player </h5>
+        <button id="player-output">
+          <img src="./Assets/question-mark.png" id="player-output-img" alt="question-mark">
+        </button>
+        <div class="score">
+          <h5>Score: 
+            <h3 id="player-score"></h3>
+          </h5>
+
+        </div>
+      </div>
+
+      <div class="computer-choice">
+        <h5> Computer</h5>
+        <button id="computer-output">
+          <img src="./Assets/question-mark.png" id="computer-output-img" alt="question-mark">
+        </button>
+        <div class="score">
+           <h5> Score: 
+            <h3 id="computer-score"></h3> 
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot-section">
+    <div class="footer-element-1">
+      <p>
+        Copyright @ Prithvi Varma Nallapuraju | 2022
+      </p>
+    </div>
+    <div class="footer-element-2">
+      <a href="https://www.facebook.com/prithvi.varma.71/"><i class="fa-brands fa-facebook-f test"></i></a>
+    </div>
+    <div class="footer-element-3">
+      <a href="https://twitter.com/prithvi_varma_n"><i class="fa-brands fa-twitter"></i></a>
+    </div>
+    <div class="footer-element-4">
+      <a href="https://www.instagram.com/prithvivarma/"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <div class="footer-element-5">
+      <a href="https://github.com/prithvivarma-nallapuraju/"><i class="fa-brands fa-github"></i></a>
+    </div>
+    <div class="footer-element-6">
+      <a href="https://www.linkedin.com/in/prithvivarmanallapuraju/"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+
   <script src="./JS/script.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
