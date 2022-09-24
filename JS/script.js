@@ -6,14 +6,60 @@ console.log('Hello World')
  * 
  */
 
+ let uc = 0
+ let cc = 0
+
  function selectedChoice(usrChc) {
     let userChoice  =  usrChc.toUpperCase()
     const computerChoice = getComputerChoice()
-    console.log('user choice is: ' + userChoice)
-    console.log('computer choice is: ' + computerChoice)
+    let winner = ''
+    displayImg(userChoice,computerChoice)
+    winner = playground(userChoice,computerChoice) 
+    
+    if(uc == 0 || uc > 5) {
+        document.getElementById("player-score").innerHTML = 0
+    }
+    if(cc == 0 || cc > 5) {
+        document.getElementById("computer-score").innerHTML = 0
+    }
+    
+    if(winner == 'user won') {
+        uc = uc+1
+        document.getElementById("player-score").innerHTML = uc
+    }else if(winner == 'computer won') {
+        cc = cc+1
+        document.getElementById("computer-score").innerHTML = cc
+    }else {
+        document.getElementById("player-score").innerHTML = uc
+        document.getElementById("computer-score").innerHTML = cc
+    }
 
-    let winner = playground(userChoice,computerChoice) 
-    console.log(winner)
+    if(uc == 5) {
+        swal({
+            title: "Good job!",
+            icon: "success",
+            button: "Play Again",
+          });
+        uc = 0
+        cc = 0
+        document.querySelector(".swal-button").addEventListener('click', () => {
+          window.location.reload(true)  
+        })
+        
+    }
+    if(cc == 5) {
+        swal({
+            title: "Better luck next time!",
+            icon: "error",
+            button: "Play Again",
+          });
+        cc = 0
+        uc = 0
+        document.querySelector(".swal-button").addEventListener('click', () => {
+            window.location.reload(true)  
+          })
+    }
+
 }
 
 function getComputerChoice() {
@@ -26,6 +72,33 @@ function getComputerChoice() {
         case 3 : return "SCISSORS"
         default : return "Invalid Number"
     }
+}
+
+function displayImg(userChoice,computerChoice) {
+    let userImg = document.getElementById("player-output-img")
+    let computerImg = document.getElementById("computer-output-img")
+
+    if(userChoice === 'ROCK') {
+        userImg.src = "./Assets/fist.png"
+    }else if(userChoice === 'PAPER') {
+        userImg.src = "./Assets/paper.png"
+    }else if(userChoice === 'SCISSORS') {
+        userImg.src = "./Assets/scissors.png"
+    }else {
+        userImg.src = "./Assets/question-mark.png"
+    }
+
+    if(computerChoice === 'ROCK') {
+        computerImg.src = "./Assets/fist.png"
+    }else if(computerChoice === 'PAPER') {
+        computerImg.src = "./Assets/paper.png"
+    }else if(computerChoice === 'SCISSORS') {
+        computerImg.src = "./Assets/scissors.png"
+    }else {
+        computerImg.src = "./Assets/question-mark.png"
+    }
+
+
 }
 
 function playground(userChoice,computerChoice) {
@@ -49,53 +122,5 @@ function playground(userChoice,computerChoice) {
         return 'computer won'
     }
 }
-
-
-// getUserChoice()
-// function playGround() {
-//     let cc=0
-//     let uc=0
-//     let userChoice
-//     let computerChoice
-//     while(cc<5 || uc<5) {
-//         userChoice = getUserChoice()
-//         computerChoice = getComputerChoice()
-//         console.log('user choice is: ' + userChoice)
-//         console.log('Computer choice is: ' + computerChoice)
-//         if (userChoice == 'ROCK' && computerChoice == 'PAPER') {
-//          cc++
-//         }else if (userChoice == 'ROCK' && computerChoice == 'SCISSORS') {
-//             console.log('user wins')
-//             uc++
-//         }else if(userChoice == 'ROCK' && computerChoice == 'ROCK') {
-//             console.log('It\'s a tie')
-//         }else if (userChoice == 'PAPER' && computerChoice == 'PAPER') {
-//             console.log('It\'s a tie')
-//         }else if (userChoice == 'PAPER' && computerChoice == 'SCISSORS') {
-//             console.log('computer wins')
-//             cc++
-//         }else if(userChoice == 'PAPER' && computerChoice == 'ROCK') {
-//             console.log('user wins')
-//             uc++
-//         }else if (userChoice == 'SCISSORS' && computerChoice == 'PAPER') {
-//             console.log('user wins')
-//             uc++
-//         }else if (userChoice == 'SCISSORS' && computerChoice == 'SCISSORS'){ 
-//             console.log('It\'s a tie')
-//         }else if(userChoice == 'SCISSORS' && computerChoice == 'ROCK') {
-//             console.log('computer wins')
-//             cc++
-//         }
-//     }
-
-//     if(uc == 5){
-//         console.log('User finally won and celebrates')
-//     }
-//     else{
-//         console.log('Computer finally won and celebrates')
-//     }
-// }
-
-//playGround()
 
 

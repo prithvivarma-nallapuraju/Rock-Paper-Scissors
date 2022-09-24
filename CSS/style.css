@@ -93,6 +93,7 @@ body {
     flex: 0.2;
 }
 
+
 .main-body .output-container .player-choice h5,
 .main-body .output-container .computer-choice h5 {
     margin: auto;
@@ -105,7 +106,28 @@ body {
     padding: 0rem;
 }
 
+.main-body .output-container .player-choice .score,
+.main-body .output-container .computer-choice .score {
+    display: flex;
+    margin: auto;
+}
 
+.main-body .output-container .player-choice .score {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+}
+
+
+.main-body .output-container .computer-choice .score {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.main-body .output-container .player-choice .score h5 ,
+.main-body .output-container .player-choice .score h5{
+    margin: auto;
+    padding: auto;
+}
 
 
 /* ---------------------- End of Play Area ------------------------ */

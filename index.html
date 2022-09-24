@@ -28,21 +28,26 @@
     <div class="output-container">
       <div class="player-choice">
         <h5> Player </h5>
-        <button>
-          <img src="./Assets/fist.png" alt="fist">
+        <button id="player-output">
+          <img src="./Assets/question-mark.png" id="player-output-img" alt="question-mark">
         </button>
         <div class="score">
-          <h5>Score: </h5>
+          <h5>Score: 
+            <h3 id="player-score"></h3>
+          </h5>
+
         </div>
       </div>
 
       <div class="computer-choice">
         <h5> Computer</h5>
-        <button>
-          <img src="./Assets/paper.png" alt="">
+        <button id="computer-output">
+          <img src="./Assets/question-mark.png" id="computer-output-img" alt="question-mark">
         </button>
         <div class="score">
-           <h5> Score: </h5>
+           <h5> Score: 
+            <h3 id="computer-score"></h3> 
+          </h5>
         </div>
       </div>
     </div>
@@ -72,5 +77,6 @@
   </div>
 
   <script src="./JS/script.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
