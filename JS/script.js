@@ -36,7 +36,7 @@ console.log('Hello World')
 
     if(uc == 5) {
         swal({
-            title: "Good job!",
+            title: "You won! Congratulations",
             icon: "success",
             button: "Play Again",
           });
@@ -49,7 +49,7 @@ console.log('Hello World')
     }
     if(cc == 5) {
         swal({
-            title: "Better luck next time!",
+            title: "Computer won! Better luck next time!",
             icon: "error",
             button: "Play Again",
           });
